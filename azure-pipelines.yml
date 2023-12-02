@@ -17,13 +17,6 @@ steps:
   displayName: Build
   workingDirectory: $(Build.SourcesDirectory)
 
-- task: Npm@1
-  displayName: Build
-  inputs:
-    command: custom
-    workingDir: $(Build.SourcesDirectory)
-    customCommand: run vsix:build
-
 - task: ArchiveFiles@2
   displayName: Archive Files
   inputs:
