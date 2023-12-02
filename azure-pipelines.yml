@@ -10,26 +10,19 @@ steps:
     versionSpec: 16.x
   displayName: Install Node.js
 
-- task: Npm@1
-  displayName: Install CopyFiles
-  inputs:
-    command: custom
-    workingDir: $(Build.SourcesDirectory)
-    customCommand: install -g copyfiles
-    
+- script: |
+    run vsix:build
+    install -g copyfiles
+    run vsix:copy
+  displayName: Build
+  workingDirectory: $(Build.SourcesDirectory)
+
 - task: Npm@1
   displayName: Build
   inputs:
     command: custom
     workingDir: $(Build.SourcesDirectory)
     customCommand: run vsix:build
-    
-- task: Npm@1
-  displayName: Copy
-  inputs:
-    command: custom
-    workingDir: $(Build.SourcesDirectory)
-    customCommand: run vsix:copy
 
 - task: ArchiveFiles@2
   displayName: Archive Files
