@@ -3,8 +3,8 @@
   "author": "dzhukovsky",
   "license": "MIT",
   "scripts": {
-    "build:XmlTransformV1": "npm install --prefix ./XmlTransformV1 & npm run build --prefix ./XmlTransformV1",
-    "start:XmlTransformV1": "npm install --prefix ./XmlTransformV1 & npm start --prefix ./XmlTransformV1",
+    "build:XmlTransformV1": "cd XmlTransformV1 & npm install & npm run build",
+    "start:XmlTransformV1": "cd XmlTransformV1 & npm install & npm run start",
     "vsix:build": "npm run build:XmlTransformV1",
     "vsix:copy": "copyfiles img/** */out/** */node_modules/** */task.json vss-extension.json out",
     "vsix": "npm run vsix:build & npm run vsix:copy & tfx extension create --manifest-globs out/vss-extension.json --output-path vsix"

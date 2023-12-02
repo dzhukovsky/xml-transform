@@ -12,8 +12,7 @@
     "cheerio": "^1.0.0-rc.12",
     "glob": "^10.3.10",
     "unzipper": "^0.10.14",
-    "uuid": "^9.0.1",
-    "xml-transform": "file:.."
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/archiver": "^6.0.2",
