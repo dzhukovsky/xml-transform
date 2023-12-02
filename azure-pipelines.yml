@@ -10,16 +10,12 @@ steps:
     versionSpec: 16.x
   displayName: Install Node.js
 
-- script: |
-    npm install
-    npm install -g copyfiles
-    npm install -g tfx-cli
-  displayName: NPM Install
-
 - script: npm run vsix:build
   displayName: Build
 
-- script: npm run vsix:copy
+- script: |
+    npm install -g copyfiles
+    npm run vsix:copy
   displayName: Copy
 
 - task: ArchiveFiles@2
