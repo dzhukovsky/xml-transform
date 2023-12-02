@@ -14,13 +14,12 @@ steps:
   displayName: Build
 
 - script: |
-    cd $(Agent.SourcesDirectory)
     npm install -g copyfiles
-    npm run vsix:copy
+    npm run vsix:copy D:/a/1/s/out
   displayName: Copy
 
-- script: |
-    cd $(Agent.SourcesDirectory)
+- script: | 
+    cd D:/a/1/s/out
     tree /F
 
 - task: ArchiveFiles@2
