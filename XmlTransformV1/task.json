@@ -1,0 +1,53 @@
+{
+    "$schema": "https://raw.githubusercontent.com/microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "cbf98ae0-8ca7-11ee-a456-23f74a85c28e",
+    "name": "XmlTransformV1",
+    "friendlyName": "XML Transform",
+    "description": "This task facilitates XML file transformations within Azure DevOps pipelines.",
+    "author": "dzhukovsky",
+    "helpMarkDown": "For more information, refer to [XML Transform Task Documentation](link-to-documentation).",
+    "category": "Utility",
+    "visibility": [
+        "Build",
+        "Release"
+    ],
+    "demands": [],
+    "version": {
+        "Major": 0,
+        "Minor": 6,
+        "Patch": 0
+    },
+    "minimumAgentVersion": "1.95.0",
+    "instanceNameFormat": "XML Transform: $(folderPath)",
+    "inputs": [
+        {
+            "name": "folderPath",
+            "type": "filePath",
+            "label": "Package or folder",
+            "defaultValue": "**/*.zip",
+            "required": true,
+            "helpMarkDown": ""
+        },
+        {
+            "name": "targetFiles",
+            "type": "multiLine",
+            "label": "Target files",
+            "required": false,
+            "defaultValue": "",
+            "helpMarkDown": ""
+        },
+        {
+            "name": "overrides",
+            "type": "multiLine",
+            "label": "Overrides",
+            "required": false,
+            "defaultValue": "",
+            "helpMarkDown": ""
+        }
+    ],
+    "execution": {
+        "Node16": {
+            "target": "out/index.js"
+        }
+    }
+}

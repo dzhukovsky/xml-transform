@@ -1,0 +1,30 @@
+{
+  "type": "module",
+  "scripts": {
+    "prestart": "npm run build",
+    "prebuild": "npm run clean",
+    "clean": "rm -rf out",
+    "build": "tsc",
+    "start": "node -r dotenv/config out/index.js"
+  },
+  "dependencies": {
+    "archiver": "^6.0.1",
+    "azure-pipelines-task-lib": "^4.7.0",
+    "chardet": "^2.0.0",
+    "cheerio": "^1.0.0-rc.12",
+    "glob": "^10.3.10",
+    "unzipper": "^0.10.14",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/archiver": "^6.0.2",
+    "@types/chardet": "^0.8.3",
+    "@types/cheerio": "^0.22.35",
+    "@types/glob": "^8.1.0",
+    "@types/node": "^16.18.66",
+    "@types/unzipper": "^0.10.9",
+    "@types/uuid": "^9.0.7",
+    "dotenv": "^16.3.1",
+    "typescript": "^4.9.5"
+  }
+}

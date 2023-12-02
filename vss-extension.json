@@ -1,0 +1,68 @@
+{
+    "$schema": "https://raw.githubusercontent.com/SchemaStore/schemastore/702811e31874cadb0ebbd215a8ca2d4e3b191e5a/src/schemas/json/vss-extension.json",
+    "manifestVersion": 1,
+    "id": "xml-transform",
+    "name": "XML Transform",
+    "version": "0.0.0",
+    "publisher": "dzhukovsky",
+    "icons": {
+        "default": "img/icon.png"
+    },
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "tags": [
+        "Build",
+        "Release"
+    ],
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "content": {
+        "details": {
+            "path": "overview.md"
+        },
+        "license": {
+            "path": "license.txt"
+        }
+    },
+    "links": {
+        "repository": {
+            "uri": "https://github.com/dzhukovsky/xml-transform"
+        },
+        "issues": {
+            "uri": "https://github.com/dzhukovsky/xml-transform/issues"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/dzhukovsky/xml-transform"
+    },
+    "files": [
+        {
+            "path": "img/icon.png",
+            "addressable": true
+        },
+        {
+            "path": "img/icon.png",
+            "packagePath": "XmlTransformV1/icon.png"
+        },
+        {
+            "path": "XmlTransformV1"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "package-extension-build-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "XmlTransformV1"
+            }
+        }
+    ]
+}

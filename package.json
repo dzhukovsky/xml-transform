@@ -1,0 +1,11 @@
+{
+  "name": "xml-transform",
+  "author": "dzhukovsky",
+  "license": "MIT",
+  "scripts": {
+    "build:XmlTransformV1": "cd XmlTransformV1 & npm install & npm run build",
+    "start:XmlTransformV1": "cd XmlTransformV1 & npm install & npm run start",
+    "vsix:build": "npm run build:XmlTransformV1",
+    "vsix": "npm run vsix:build & tfx extension create --manifest-globs vss-extension.json --output-path vsix"
+  }
+}
