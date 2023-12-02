@@ -2,8 +2,6 @@
   "type": "module",
   "scripts": {
     "prestart": "npm run build",
-    "prebuild": "npm run clean",
-    "clean": "rm -rf out",
     "build": "tsc",
     "start": "node -r dotenv/config out/index.js"
   },
@@ -14,7 +12,8 @@
     "cheerio": "^1.0.0-rc.12",
     "glob": "^10.3.10",
     "unzipper": "^0.10.14",
-    "uuid": "^9.0.1"
+    "uuid": "^9.0.1",
+    "xml-transform": "file:.."
   },
   "devDependencies": {
     "@types/archiver": "^6.0.2",
