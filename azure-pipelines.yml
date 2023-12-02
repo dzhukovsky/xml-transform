@@ -21,7 +21,7 @@ steps:
 - task: ArchiveFiles@2
   displayName: Archive Files
   inputs:
-    rootFolderOrFile: $(Build.BinariesDirectory)/out
+    rootFolderOrFile: /out
     includeRootFolder: false
     archiveType: zip
     archiveFile: $(Build.ArtifactStagingDirectory)/package.zip
