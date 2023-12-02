@@ -11,9 +11,9 @@ steps:
   displayName: Install Node.js
 
 - script: |
-    npm run vsix:build
     npm install -g copyfiles
-    npm run vsix:copy $(Build.ArtifactStagingDirectory)
+    npm run vsix:copy
+  displayName: Build
 
 - script: tree /F
 
