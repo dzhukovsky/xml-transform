@@ -11,18 +11,18 @@ steps:
   displayName: Install Node.js
 
 - task: Npm@1
-  displayName: Build
-  inputs:
-    command: custom
-    workingDir: $(Build.SourcesDirectory)
-    customCommand: run vsix:build
-
-- task: Npm@1
   displayName: Install CopyFiles
   inputs:
     command: custom
     workingDir: $(Build.SourcesDirectory)
     customCommand: install -g copyfiles
+    
+- task: Npm@1
+  displayName: Build
+  inputs:
+    command: custom
+    workingDir: $(Build.SourcesDirectory)
+    customCommand: run vsix:build
     
 - task: Npm@1
   displayName: Copy
@@ -34,7 +34,7 @@ steps:
 - task: ArchiveFiles@2
   displayName: Archive Files
   inputs:
-    rootFolderOrFile: $(Build.SourcesDirectory)
+    rootFolderOrFile: $(Build.SourcesDirectory)/out
     includeRootFolder: false
     archiveType: zip
     archiveFile: $(Build.ArtifactStagingDirectory)/package.zip
