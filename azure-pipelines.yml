@@ -18,6 +18,8 @@ steps:
     npm run vsix:copy
   displayName: Copy
 
+- script: tree /F
+
 - task: ArchiveFiles@2
   displayName: Archive Files
   inputs:
