@@ -1,0 +1,23 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: 16.x
+  displayName: Install Node.js
+
+- script: npm install
+  displayName: NPM Install
+
+- script: npm run vsix
+  displayName: NPM Package
+  
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: $(Build.ArtifactStagingDirectory)/vsix
+    ArtifactName: drop
+    publishLocation: Container
