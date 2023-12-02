@@ -10,12 +10,12 @@ steps:
     versionSpec: 16.x
   displayName: Install Node.js
 
-- script: |
-    npm run vsix:build
-    npm install -g copyfiles
-    npm run vsix:copy
+- task: Npm@1
   displayName: Build
-
+  inputs:
+    command: 'custom'
+    customCommand: npm run vsix:build & npm install -g copyfiles & npm run vsix:copy
+    
 - script: tree /F
 
 - task: ArchiveFiles@2
