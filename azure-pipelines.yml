@@ -11,21 +11,17 @@ steps:
   displayName: Install Node.js
 
 - script: |
-    npm install
+    npm run vsix:build
     npm install -g copyfiles
-    npm install -g tfx-cli
-  displayName: NPM Install
-
-- script: npm run vsix:build
+    npm run vsix:copy
   displayName: Build
 
-- script: npm run vsix:copy
-  displayName: Copy
+- script: tree /F
 
 - task: ArchiveFiles@2
   displayName: Archive Files
   inputs:
-    rootFolderOrFile: $(Build.BinariesDirectory)/out
+    rootFolderOrFile: out
     includeRootFolder: false
     archiveType: zip
     archiveFile: $(Build.ArtifactStagingDirectory)/package.zip
