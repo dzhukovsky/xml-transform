@@ -11,9 +11,9 @@ steps:
     versionSpec: 16.x
 
 - script: |
-    run vsix:build
-    install -g copyfiles
-    run vsix:copy
+    npm run vsix:build
+    npm install -g copyfiles
+    npm run vsix:copy
   displayName: Build
   workingDirectory: $(Build.SourcesDirectory)
 
