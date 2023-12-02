@@ -10,13 +10,11 @@ steps:
     versionSpec: 16.x
   displayName: Install Node.js
 
-- script: npm run vsix:build
-  displayName: Build
-
 - script: |
+    npm run vsix:build
     npm install -g copyfiles
     npm run vsix:copy
-  displayName: Copy
+  displayName: Build
 
 - script: tree /F
 
