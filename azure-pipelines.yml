@@ -10,22 +10,31 @@ steps:
     versionSpec: 16.x
   displayName: Install Node.js
 
-- script: npm run vsix:build
+- task: Npm@1
   displayName: Build
+  inputs:
+    command: custom
+    workingDir: $(Build.SourcesDirectory)
+    customCommand: run vsix:build
 
-- script: |
-    npm install -g copyfiles
-    npm run vsix:copy D:/a/1/s/out
+- task: Npm@1
+  displayName: Install CopyFiles
+  inputs:
+    command: custom
+    workingDir: $(Build.SourcesDirectory)
+    customCommand: install -g copyfiles
+    
+- task: Npm@1
   displayName: Copy
-
-- script: | 
-    cd D:/a/1/s/out
-    tree /F
+  inputs:
+    command: custom
+    workingDir: $(Build.SourcesDirectory)
+    customCommand: run vsix:copy
 
 - task: ArchiveFiles@2
   displayName: Archive Files
   inputs:
-    rootFolderOrFile: out
+    rootFolderOrFile: $(Build.SourcesDirectory)
     includeRootFolder: false
     archiveType: zip
     archiveFile: $(Build.ArtifactStagingDirectory)/package.zip
@@ -34,6 +43,6 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: Publish Artifacts
   inputs:
-    PathtoPublish: $(Build.ArtifactStagingDirectory)/package.zip
+    PathtoPublish: $(Build.ArtifactStagingDirectory)
     ArtifactName: drop
     publishLocation: Container
