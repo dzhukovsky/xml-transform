@@ -6,9 +6,9 @@ pool:
 
 steps:
 - task: NodeTool@0
+  displayName: Install Node.js
   inputs:
     versionSpec: 16.x
-  displayName: Install Node.js
 
 - script: |
     run vsix:build
