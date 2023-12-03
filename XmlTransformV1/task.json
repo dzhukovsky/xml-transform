@@ -5,7 +5,7 @@
     "friendlyName": "XML Transform",
     "description": "This task facilitates XML file transformations within Azure DevOps pipelines.",
     "author": "dzhukovsky",
-    "helpMarkDown": "For more information, refer to [XML Transform Task Documentation](link-to-documentation).",
+    "helpMarkDown": "For more information, refer to [XML Transform Task Documentation](https://github.com/dzhukovsky/xml-transform).",
     "category": "Utility",
     "visibility": [
         "Build",
@@ -26,7 +26,7 @@
             "label": "Package or folder",
             "defaultValue": "**/*.zip",
             "required": true,
-            "helpMarkDown": ""
+            "helpMarkDown": "File path to the package or a folder, wildcards are supported. For example, **/*.zip."
         },
         {
             "name": "targetFiles",
@@ -34,7 +34,7 @@
             "label": "Target files",
             "required": false,
             "defaultValue": "",
-            "helpMarkDown": ""
+            "helpMarkDown": "Provide new line separated list of files to substitute values. Files names are to be provided relative to the root folder."
         },
         {
             "name": "overrides",
@@ -42,7 +42,7 @@
             "label": "Overrides",
             "required": false,
             "defaultValue": "",
-            "helpMarkDown": ""
+            "helpMarkDown": "Provide new line separated list of transformation rules using the syntax:\nExample:\nSingle node syntax:\nnode1.childNode1 = value\nnode1.childNode1:attribute1 = value\n[selector].childNode1 = value\n[selector].childNode1:attribute1 = value\n\nMultiple nodes syntax:\nnode1.childNode1:[0] = value\nnode1.childNode1:[0]:attribute1 = value\n[selector].childNode1:[0] = value\n[selector].childNode1:[0]:attribute1 = value\nFor more information, refer to [XML Transform Task Documentation](https://github.com/dzhukovsky/xml-transform#overrides)."
         }
     ],
     "execution": {
