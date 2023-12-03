@@ -6,6 +6,6 @@
     "build:XmlTransformV1": "cd XmlTransformV1 & npm install & npm run build",
     "start:XmlTransformV1": "cd XmlTransformV1 & npm install & npm run start",
     "vsix:build": "npm run build:XmlTransformV1",
-    "vsix:copy": "copyfiles configs/** img/** */out/** */node_modules/** */task.json vss-extension.json README.md license.txt out"
+    "vsix:copy": "copyfiles img/** */out/** */node_modules/** */task.json vss-extension*.json README.md license.txt out"
   }
 }
