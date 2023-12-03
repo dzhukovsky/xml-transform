@@ -12,9 +12,6 @@
         {
             "path": "img/icon-dev.png",
             "packagePath": "XmlTransformV1/icon.png"
-        },
-        {
-            "path": "XmlTransformV1"
         }
     ]
 }
