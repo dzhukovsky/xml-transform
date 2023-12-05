@@ -5,6 +5,10 @@
     "name": "XML Transform",
     "version": "0.0.0",
     "publisher": "dzhukovsky",
+    "galleryFlags": [
+        "Preview",
+        "Public"
+    ],
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
