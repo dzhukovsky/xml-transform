@@ -5,6 +5,7 @@
     "name": "XML Transform",
     "version": "0.0.0",
     "publisher": "dzhukovsky",
+    "description": "Task to replace tokens with variable values in XML configuration files.",
     "galleryFlags": [
         "Preview",
         "Public"

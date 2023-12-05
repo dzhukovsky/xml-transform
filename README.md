@@ -1,5 +1,5 @@
 # XML Transform Task
-Use this task to replace tokens with variable values in XML configuration files.
+Task to replace tokens with variable values in XML configuration files.
 
 ## Syntax
 ```yml
