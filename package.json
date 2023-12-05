@@ -3,9 +3,16 @@
   "author": "dzhukovsky",
   "license": "MIT",
   "scripts": {
+    "cli": "npm install -g copyfiles & npm install -g jsonmerge & npm install -g tfx-cli",
     "build:XmlTransformV1": "cd XmlTransformV1 & npm install & npm run build",
     "start:XmlTransformV1": "cd XmlTransformV1 & npm install & npm run start",
     "vsix:build": "npm run build:XmlTransformV1",
-    "vsix:copy": "copyfiles img/** */out/** */node_modules/** */*.json vss-extension*.json README.md license.txt out"
+    "vsix:copy": "copyfiles img/** */out/** */node_modules/** */*.json vss-extension*.json README.md license.txt out",
+    "configs:vss:dev": "jsonmerge configs/vss-extension.json configs/vss-extension.dev.json > out/vss-extension.json",
+    "configs:vss:prod": "jsonmerge configs/vss-extension.json > out/vss-extension.json",
+    "configs:XmlTransformV1:dev": "jsonmerge configs/XmlTransformV1.json configs/XmlTransformV1.dev.json > out/XmlTransformV1/task.json",
+    "configs:XmlTransformV1:prod": "jsonmerge configs/XmlTransformV1.json  > out/XmlTransformV1/task.json",
+    "configs:dev": "npm run configs:vss:dev && npm run configs:XmlTransformV1:dev",
+    "configs:prod": "npm run configs:vss:prod && npm run configs:XmlTransformV1:prod"
   }
 }

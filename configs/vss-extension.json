@@ -1,8 +1,8 @@
 {
     "$schema": "https://raw.githubusercontent.com/SchemaStore/schemastore/702811e31874cadb0ebbd215a8ca2d4e3b191e5a/src/schemas/json/vss-extension.json",
     "manifestVersion": 1,
-    "id": "id",
-    "name": "name",
+    "id": "xml-transform",
+    "name": "XML Transform",
     "version": "0.0.0",
     "publisher": "dzhukovsky",
     "targets": [
@@ -17,6 +17,9 @@
     "categories": [
         "Azure Pipelines"
     ],
+    "icons": {
+        "default": "img/icon.png"
+    },
     "content": {
         "details": {
             "path": "README.md"
@@ -38,6 +41,14 @@
         "uri": "https://github.com/dzhukovsky/xml-transform"
     },
     "files": [
+        {
+            "path": "img/icon.png",
+            "addressable": true
+        },
+        {
+            "path": "img/icon.png",
+            "packagePath": "XmlTransformV1/icon.png"
+        },
         {
             "path": "XmlTransformV1"
         }
