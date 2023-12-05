@@ -29,7 +29,6 @@ node1.childNode1 = value
 node1.childNode1:attribute1 = value
 [selector].childNode1 = value
 [selector].childNode1:attribute1 = value
-
 ```
 
 Multiple nodes syntax:
