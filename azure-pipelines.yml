@@ -10,13 +10,12 @@ steps:
   inputs:
     versionSpec: 16.x
 
-- task: PowerShell@2
-  displayName: Install CopyFiles & JsonMerge
+- task: Npm@1
+  displayName: Install CopyFiles
   inputs:
-    targetType: 'inline'
-    script: |
-      npm install -g copyfiles
-      npm install -g jsonmerge
+    command: custom
+    workingDir: $(Build.SourcesDirectory)
+    customCommand: install -g copyfiles
 
 - task: Npm@1
   displayName: Build
